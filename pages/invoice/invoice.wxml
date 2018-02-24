@@ -1,0 +1,18 @@
+<!--pages/invoice/invoice.wxml-->
+<view class="container">
+  <view class="invoice_list">
+    <view class="invoice_item" bindtap="toChooseInvoice">
+      <view class="invoice_item_left">
+        <text>开具发票</text>
+      </view>
+      <image src="../../images/left.png"></image>
+    </view>
+    <view class="invoice_item" bindtap="toInvoiceList">
+      <view class="invoice_item_left">
+        <text>开票历史</text>
+      </view>
+      <image src="../../images/left.png"></image>
+    </view>
+  </view>
+
+</view>

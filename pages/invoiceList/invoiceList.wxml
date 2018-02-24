@@ -1,0 +1,20 @@
+<!--pages/mine/mine.wxml-->
+<view class="container">
+  <block wx:if="{{count == 0}}">
+    <view class="no_pannle">
+      <image class="nothing" src="../../images/no_invoice.png" />
+      <text class="nothing_text">暂无开票记录</text>
+    </view>
+  </block>
+  <block wx:else>
+    <view class="invoice_list">
+      <view class="invoice_item" wx:for="{{invoiceList}}" wx:for-item="item" wx:key="{{item.id}}" id="{{item.id}}" bindtap="toInvoiceDetail">
+        <view class="item_left">
+          <text>{{item.create_time}}</text>
+          <text>纸质发票 {{item.price}}元</text>
+        </view>
+        <text>{{item.state==0 ? '待开票' : item.state==1? '已发出' : item.state==2? '已完成' : '已取消'}}</text>
+      </view>
+    </view>
+  </block>
+</view>

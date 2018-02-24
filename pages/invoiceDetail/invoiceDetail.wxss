@@ -1,0 +1,108 @@
+.top {
+  padding: 0 30rpx;
+  display: flex;
+  align-items: center;
+  margin-top: 20rpx;
+}
+
+.state {
+  font-size: 28rpx;
+  color: #404040;
+  margin-right: 16rpx;
+}
+
+.tip {
+  font-size: 22rpx;
+  color: #ec0000;
+}
+
+.item_pannle {
+  background: #fff;
+  padding: 30rpx 15rpx;
+  font-size: 28rpx;
+  color: #404040;
+  margin-top: 20rpx;
+}
+
+.item_title {
+  padding: 0 15rpx 30rpx;
+  border-bottom: solid 1rpx #e5e5e5;
+}
+
+.item_content {
+  padding: 20rpx 15rpx 0;
+  font-size: 24rpx;
+  line-height: 48rpx;
+}
+
+.item_li {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow: hidden;
+}
+
+.item_li text {
+  display: inline-block;
+  flex-shrink: 1; 
+  overflow: hidden;
+  width: 100%;
+}
+
+.item_li .d_left {
+  flex-shrink: 0;
+  width: 180rpx;
+}
+
+.item_top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.item_top_title {
+  flex-shrink: 0;
+}
+
+.p {
+  padding: 0 15rpx;
+  line-height: 48rpx;
+}
+
+.jt {
+  width: 28rpx;
+  height: 28rpx;
+}
+
+.invoice_list {
+  background: #fff;
+  padding: 0 15rpx;
+  border-top: solid 1rpx #e5e5e5;
+  margin-bottom: 20rpx;
+}
+
+.invoice_item {
+  font-size: 24rpx;
+  line-height: 48rpx;
+  color: #5a5a5a;
+  padding: 30rpx 15rpx;
+  border-top: solid 1rpx #e5e5e5;
+}
+
+.invoice_item:first-child {
+  border-top: none;
+}
+
+.cancle {
+  margin: 60rpx auto;
+}
+
+.cancle button {
+  width: 400rpx;
+  height: 80rpx;
+  border: none;
+  border-radius: 40rpx;
+  background: #26888E;
+  color: #fff;
+  font-size: 28rpx;
+  line-height: 80rpx;
+}

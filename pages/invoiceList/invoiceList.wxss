@@ -1,0 +1,36 @@
+.no_pannle {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 200rpx;
+}
+
+.nothing {
+  width: 400rpx;
+  height: 400rpx;
+}
+
+.nothing_text {
+  font-size: 24rpx;
+  color: #bfbfbf;
+}
+.invoice_list {
+  margin-top: 20rpx;
+  overflow: hidden;
+}
+.invoice_item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #fff;
+  margin-bottom: 20rpx;
+  padding: 36rpx 30rpx 36rpx 40rpx;
+  color: #404040;
+  font-size: 24rpx;
+}
+.item_left {
+  display: flex;
+  flex-direction: column;
+  font-size: 28rpx;
+  line-height: 48rpx;
+}

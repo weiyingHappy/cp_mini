@@ -1,0 +1,103 @@
+.coupon_type {
+  width: 100%;
+  height: 88rpx;
+  background: #fff;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border-bottom: solid 1rpx #e9e9e9;
+}
+
+.coupon_type text {
+  font-size: 28rpx;
+  color: #404040;
+  padding: 28rpx 30rpx 20rpx;
+  border-bottom: solid 4rpx transparent;
+}
+
+.coupon_type .true {
+  border-bottom: solid 4rpx #00becb;
+}
+
+.no_pannle {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 200rpx;
+}
+
+.nothing {
+  width: 400rpx;
+  height: 400rpx;
+}
+
+.nothing_text {
+  font-size: 24rpx;
+  color: #bfbfbf;
+}
+
+.coupon_list {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-top: 20rpx;
+}
+
+.coupon_item {
+  display: flex;
+  height: 160rpx;
+  background: #fff;
+  margin: 0 30rpx 20rpx;
+  border-radius: 12rpx;
+  overflow: hidden;
+}
+
+.coupon_left {
+  position: relative;
+  height: 100%;
+  width: 240rpx;
+  background: #bfbfbf;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+}
+
+.text_tip {
+  font-size: 24rpx;
+}
+
+.top_point {
+  position: absolute;
+  width: 24rpx;
+  height: 24rpx;
+  border-radius: 50%;
+  background: #f4f4f4;
+  top: -12rpx;
+  right: -12rpx;
+}
+
+.bottom_point {
+  position: absolute;
+  width: 24rpx;
+  height: 24rpx;
+  border-radius: 50%;
+  background: #f4f4f4;
+  bottom: -12rpx;
+  right: -12rpx;
+}
+
+.coupon_right {
+  margin-left: 48rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-size: 22rpx;
+  color: #bfbfbf;
+}
+
+.coupon_time {
+  font-size: 26rpx;
+  color: #5a5a5a;
+  margin-bottom: 24rpx;
+}

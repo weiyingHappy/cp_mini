@@ -1,0 +1,132 @@
+<view class="container">
+
+  <view wx:if="{{sendEmail}}" class="email_bg">
+    <view class="email_pannle">
+      <text>发送文件到邮箱</text>
+      <input placeholder="请输入要发送的邮箱地址" placeholder-style="color:#bfbfbf" value="{{orderDetail.email}}" name="email" data-name="email" focus="true" bindfocus="focusItemValue" bindinput="orderItemValue"></input>
+      <view class="email_btn">
+        <button plain="true" bindtap="cancleSend" value="{{orderDetail.email}}">取消</button>
+        <view class="email_line"></view>
+        <button plain="true" class="confirm_send" bindtap="confirmSend" disabled="{{disabled}}">发送</button>
+      </view>
+    </view>
+  </view>
+  <view class="order_top">
+    <text class="order_state">订单状态：{{orderDetail.state==10 ? '已完成' : orderDetail.state==0? '已提交' : orderDetail.state==1? '待确认' : orderDetail.state==2? '待支付' : orderDetail.state==3? '制作中' : orderDetail.state==4? '交付确认' : orderDetail.state==11? '已取消' : '平台取消' }}</text>
+    <view class="order_tip">
+      <image src="../../images/time_tip.png" />
+      <text wx:if='{{orderDetail.appraise == 1}}'>{{orderDetail.state_etc[0].event[0].event}}</text>
+      <text wx:else>{{orderDetail.state_etc[0].msg}}</text>
+    </view>
+    <button plain="true" class="comment" id="{{order_no}}" bindtap="toCommentPage" wx:if="{{orderDetail.state==10&&orderDetail.comment==null}}">立即评价</button>
+  </view>
+
+  <view wx:if="{{orderDetail.state==4||orderDetail.state==10}}" class="order_pannle">
+    <text class="order_pannle_title">交付内容</text>
+    <view class="menu">
+      <view class="menu_list" wx:for="{{orderDetail.menu}}" wx:for-item="item" wx:key="id">
+        <view wx:if="{{item.single_state == 0}}">
+          <text>制作项目：{{item.name}}</text>
+          <view class="menu_item">
+            <view class="menu_item_program">
+              <view class="menu_item_img">
+                <image src="../../images/doc_img.png" data-src="{{item.paper}}" bindtap="downloadFile" />
+                <text>工艺文档</text>
+              </view>
+              <view class="menu_item_img">
+                <image src="../../images/code_img.png" data-src="{{item.program}}" bindtap="downloadFile" />
+                <text>工艺文档</text>
+              </view>
+            </view>
+            <text>备注：{{item.single_etc}}</text>
+          </view>
+        </view>
+
+      </view>
+      <button wx:if="{{orderDetail.state==4}}" plain="true" bindtap="confirmGetOrder">确认订单</button>
+      <button plain="true" bindtap="sendToEmail">发送文件到邮箱</button>
+    </view>
+  </view>
+
+  <view class="order_pannle_img">
+    <text class="order_title">{{orderDetail.order_name}}</text>
+    <view class="order_img">
+      <view wx:for="{{orderDetail.img}}" wx:for-item="image" wx:key="image">
+        <image src="{{image}}" data-src="{{image}}" catchtap="previewImage" mode="aspectFill"></image>
+      </view>
+    </view>
+    <view class="order_remark">
+      <text>{{orderDetail.etc}}</text>
+    </view>
+  </view>
+
+  <view class="order_pannle">
+    <text>联系人：{{orderDetail.user_name}}</text>
+    <text>手机号：{{orderDetail.phone}}</text>
+    <text>地址：{{orderDetail.address}}</text>
+    <text>订单编号：{{orderDetail.order_no}}</text>
+  </view>
+
+  <view wx:if="{{orderDetail.state != 0}}" class="order_pannle">
+    <view class="order_pay_list">
+      <view class="order_pay_item" wx:for="{{orderDetail.menu}}" wx:for-item="item" wx:key="{{index}}">
+        <view wx-if="{{item.single_state == 0}}" class="order_pay_content">
+          <text>{{item.name}}</text>
+          <text class="order_pay_price">价格：{{item.single_price}}</text>
+          <text class="order_pay_remark">备注：{{item.single_etc}}</text>
+        </view>
+        <view wx-if="{{item.single_state == 1}}" class="order_pay_content order_cancel_content">
+          <text>{{item.name}}</text>
+          <text class="order_pay_price">价格：{{item.single_price}}</text>
+          <text class="order_pay_remark">备注：{{item.single_etc}}</text>
+        </view>
+        <block wx:if="{{orderDetail.state==1}}">
+          <button wx:if="{{item.single_state == 0}}" plain="true" id="{{item.id}}" data-state="{{item.single_state}}" data-index="{{index}}" bindtap="changeMenuState">取消</button>
+          <button wx:else plain="true" id="{{item.id}}" data-state="{{item.single_state}}" data-index="{{index}}" bindtap="changeMenuState">恢复</button>
+        </block>
+      </view>
+    </view>
+
+    <view wx:if="{{orderDetail.state==4||orderDetail.state==10}}" class="order_pay_text">
+      <text>交付内容：</text>
+      <text>{{item.content}}</text>
+    </view>
+
+    <view class="order_btn_pannle" wx:if="{{orderDetail.state == 1}}">
+      <button plain="true" bindtap="cancelOrder">取消订单</button>
+      <button plain="true" class="confirm" bindtap="confirmOrder">确认</button>
+    </view>
+    <view class="ordered_btn_pannle" wx:if="{{orderDetail.state == 2}}">
+      <button plain="true" class="long_btn" id="{{order_no}}" bindtap="toPayOrder">去支付</button>
+    </view>
+  </view>
+
+  <view class="order_schedule_list">
+    <view class="order_schedule" wx:for="{{orderDetail.state_etc}}" wx:for-item="item" wx:key="{{item.index}}">
+      <view class="schedule_item" wx:for="{{item.event}}" wx:for-item="item" wx:key="{{item.time}}">
+        <view class="order_schedule_time">
+          <text>{{item.time}}</text>
+        </view>
+        <view class="order_schedule_line">
+          <view class="second_state"></view>
+        </view>
+        <text class="tip_state">{{item.event}}</text>
+      </view>
+      <view class="order_schedule_item">
+        <view class="order_schedule_time">
+          <text class="main_date">{{item.time}}</text>
+        </view>
+        <view class="order_schedule_line ">
+          <image wx:if="{{orderDetail.state_etc[0].state == item.state}}" src="../../images/state_tiped.png" />
+          <image wx:else src="../../images/state_tip.png" />
+        </view>
+        <view class="order_schedule_content">
+          <text class="main_state">{{item.state==10 ? '已完成' : item.state==0? '已提交' : item.state==1? '待确认' : item.state==2? '待支付' : item.state==3? '制作中' : item.state==4? '交付确认' : item.state==11? '已取消' : '平台取消' }}</text>
+        </view>
+      </view>
+
+    </view>
+  </view>
+
+
+</view>

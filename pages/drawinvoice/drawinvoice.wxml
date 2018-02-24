@@ -1,0 +1,106 @@
+<!--pages/drawinvoice/drawinvoice.wxml-->
+
+<view class="container">
+  <view class="ad_popError" wx:if="{{popErrorMsg}}">
+    <view>
+      <text>{{popErrorMsg}}</text>
+    </view>
+  </view>
+  <view class="draw_tip">
+    <view class="dr_tips">
+      <text>发票详情</text>
+    </view>
+    <text class="dr_tip">当前仅支持开具普通增值税纸质发票</text>
+  </view>
+  <view class="dr_info">
+    <view class="dr_info-contain">
+      <view class="dr_title-name">
+        <text class="dr_title-ordername">发票抬头</text>
+        <view class="add_info">
+          <input class="dr_ordername" placeholder="请输入公司名称" placeholder-style="color:#bfbfbf" name="customer_name" data-name="customer_name" value="{{customer_name}}" bindblur="orderItemValue" />
+        </view>
+      </view>
+      <view class="dr_title-name">
+        <text class="dr_title-ordername">税号</text>
+        <view class="add_info">
+          <input class="dr_cordername" placeholder="请输入税号或者社会信用代码" placeholder-style="color:#bfbfbf" name="credit" data-name="credit" value="{{credit}}" bindblur="orderItemValue" />
+        </view>
+      </view>
+      <view class="dr_title-name">
+        <text class="dr_title-ordername">发票内容</text>
+        <view class="add_info">
+          <text class="dr_ordername">{{invoice_content}}</text>
+        </view>
+      </view>
+      <view class="dr_title-name">
+        <text class="dr_title-ordername">发票金额</text>
+        <view class="add_info">
+          <text class="dr_ordername">{{price}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="dr_info">
+    <view class="dr_info-contain">
+      <view class="dr_title-name">
+        <text class="dr_title-ordername">收件人</text>
+        <view class="add_info">
+          <input class="dr_ordername" placeholder="请输入联系人姓名" placeholder-style="color:#bfbfbf" name="contact" data-name="contact" value="{{contact}}" bindblur="orderItemValue" />
+        </view>
+      </view>
+      <view class="dr_title-name">
+        <text class="dr_title-ordername">联系方式</text>
+        <view class="add_info">
+          <input class="dr_ordername" placeholder="请输入手机号" placeholder-style="color:#bfbfbf" name="phone" data-name="phone" value="{{phone}}" bindblur="orderItemValue" />
+        </view>
+      </view>
+      <view class="dr_title-name">
+        <text class="position" bindtap="getLocation">当前位置</text>
+        <input class="dr_ordername" placeholder="请输入当前位置" placeholder-style="color:#bfbfbf" name="address" data-name="address" value="{{address}}" bindblur="orderItemValue" />
+      </view>
+    </view>
+  </view>
+  <view class="draw_sub">
+    <view class="btn">
+      <button class="addinfo" bindtap="drawSub">提交</button>
+    </view>
+    <view class="intro">
+      <text bindtap="toInvoiceIntro">开票说明</text>
+    </view>
+  </view>
+
+  <view class="myinvoce_modal" wx:if="{{showTost}}" >
+    <view class="m_second">
+      <view class="myinvoce" data-invoice="invoice">
+        <view class="m_title">我的发票</view>
+        <view class="m_content">
+          <view>
+            <text class="con_title">发票类型</text>
+            <text class="con">纸质发票</text>
+          </view>
+          <view>
+            <text class="con_title">发票抬头</text>
+            <text class="con">{{customer_name}}</text>
+          </view>
+          <view>
+            <text class="con_title">税号</text>
+            <text class="con">{{credit}}</text>
+          </view>
+          <view>
+            <text class="con_title">收件人</text>
+            <text class="con">{{contact}}</text>
+          </view>
+          <view>
+            <text class="con_title">收件地址</text>
+            <text class="con">{{address}}</text>
+          </view>
+
+        </view>
+        <view class="m_operate">
+          <view class="m_cancel" bindtap="optCancel">取消</view>
+          <view class="m_btn" bindtap="optBtn">确认提交</view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

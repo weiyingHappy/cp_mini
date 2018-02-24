@@ -1,0 +1,17 @@
+<view class="container">
+  <view>
+    <view class='top'>
+      <image src='../../images/success.png' />
+      <text>支付成功</text>
+    </view>
+    <view class='info'>
+      <text>成都莲雾科技有限公司</text>
+      <text>工艺帮服务平台</text>
+    </view>
+    <text class='price'>
+    ￥<text class='tag'>{{pay_price}}</text>
+    </text>
+  </view>
+
+  <button class='success_btn' bindtap='toOrders'>完成</button>
+</view>

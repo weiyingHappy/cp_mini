@@ -1,0 +1,43 @@
+/* pages/feeScale/feeScale.wxss */
+.fee_title{
+  padding:34rpx 30rpx;
+  display: flex; 
+  flex-direction: column;
+  align-items: center;
+}
+.fee_title text:first-child{
+  color:'#404040';
+  font-size:36rpx;
+  padding-bottom: 22rpx;
+}
+.fee_title text:last-child{
+  color:'#404040';
+  font-size:28rpx;
+}
+.fee_img{
+  padding:0 30rpx 52rpx;
+  height: 350rpx;
+}
+.fee_img image{
+  width: 100%;
+  height: 100%;
+}
+.fee_note{
+  padding: 0 30rpx;
+  font-size: 28rpx;
+  color: '#404040'
+}
+.fee_list{
+  padding: 0 30rpx 48rpx;
+  font-size: 24rpx;
+  color: '#404040'
+}
+.fee_list view{
+  line-height: 36rpx;
+  margin-bottom: 2rpx;
+}
+.fee_other{
+  padding: 0 30rpx 160rpx;
+  font-size: 24rpx;
+  color: '#404040'
+}

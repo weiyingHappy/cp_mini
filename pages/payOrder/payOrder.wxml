@@ -1,0 +1,75 @@
+<view class="container">
+
+  <view wx:if="{{errMsg}}" class="err_bg">
+    <view class="err_pannle">
+      <text>无效的优惠券</text>
+    </view>
+  </view>
+
+  <view class="order_pannle_img">
+    <text class="order_no">订单编号：{{orderDetail.order_no}}</text>
+    <view class="order_img">
+      <view wx:for="{{orderDetail.img}}" wx:for-item="image" wx:key="image">
+        <image src="{{image}}" data-src="{{image}}" catchtap="previewImage" mode="aspectFill"></image>
+      </view>
+    </view>
+    <view class="order_remark">
+      <text>{{orderDetail.etc}}</text>
+    </view>
+  </view>
+
+  <view class="order_pannle">
+    <text>联系人：{{orderDetail.user_name}}</text>
+    <text>手机号：{{orderDetail.phone}}</text>
+    <text>地址：{{orderDetail.address}}</text>
+  </view>
+
+  <block wx:if="{{orderDetail.pay_price == null}}">
+    <view class="order_pannle">
+      <view class="coupon_item" bindtap="toChooseCoupon">
+        <view class="coupon_item_left">
+          <text>选择优惠券</text>
+          <view wx:if="{{price.coupon_price}}" class="choose_tag">已选1张</view>
+        </view>
+        <view class="coupon_item_right">
+          <text>-￥{{price.coupon_price}}</text>
+          <image src="../../images/left.png" />
+        </view>
+      </view>
+    </view>
+  </block>
+  <block wx:else>
+    <view class="order_pannle" wx:if="{{orderDetail.coupon_no != null}}">
+      <view class="coupon_item">
+        <view class="coupon_item_left">
+          <text>已使用优惠券</text>
+        </view>
+        <view class="coupon_item_right">
+          <text>-￥{{orderDetail.coupon_price}}</text>
+        </view>
+      </view>
+    </view>
+  </block>
+
+  <view class="order_pannle">
+    <view class="price_item">
+      <text>订单金额</text>
+      <text class="price_num">￥{{orderDetail.price}}</text>
+    </view>
+    <view class="price_item">
+      <text>优惠金额</text>
+      <text class="price_num" wx:if="{{orderDetail.coupon_price}}">-￥{{orderDetail.coupon_price}}</text>
+      <text class="price_num" wx:else>-￥{{price.coupon_price ? price.coupon_price : 0}}</text>
+    </view>
+    <view class="pay_price">
+      <text>实付金额：</text>
+      <text class="price_num" wx:if="{{orderDetail.pay_price}}">￥{{orderDetail.pay_price}}</text>
+      <text class="price_num" wx:else>￥{{price.pay_price ? price.pay_price: orderDetail.price }}</text>
+    </view>
+  </view>
+
+  <view class="ordered_btn_pannle">
+    <button plain="true" class="long_btn" id="{{order_no}}" bindtap="toPayOrder">确认支付</button>
+  </view>
+
+</view>

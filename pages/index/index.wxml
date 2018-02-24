@@ -1,0 +1,69 @@
+<view>
+
+  <view class="swiper" bindtouchstart="touchStart" bindtouchend="touchEnd">
+    <view class="swiper_item {{classCatch[index]}}" wx:for="{{imgUrls}}" wx:key="{{index}}">
+      <image src="{{item}}" mode="aspectFill" />
+    </view>
+  </view>
+
+  <view class="content">
+    <view class="message">
+      <view class="title">通知</view>
+      <view class="msg-container">
+        <swiper indicator-dots="" circular="false" class="msg-swiper" vertical="true" autoplay="true" interval="{{interval2}}" duration="1000">
+          <block wx:for="{{noticeList}}" wx:key="idx">
+            <swiper-item class="swiper-item">
+              <text class="notify">{{item.msg}} {{item.time}}</text>
+            </swiper-item>
+          </block>
+        </swiper>
+      </view>
+    </view>
+  </view>
+
+  <view wx:if="{{orderList.length > 0}}" class="order_state" wx:for="{{orderList}}" wx:for-index="idxs" wx:key="idxs" wx:for-item="items">
+    <text class="order_no">订单编号：{{items.order_no}}</text>
+    <view class="state_sed">
+      <view class="state_line"></view>
+      <view class="state_container">
+        <view class="state_flex">
+          <view class="state_item" wx:for="{{order_status}}" wx:for-index="idx" wx:key="idx" wx:for-item="status_item">
+            <view>
+              <image src="{{status_item.status<items.state?status_item.icon[2]:(status_item.status>items.state?status_item.icon[0]:status_item.icon[1])}}" />
+            </view>
+            <text>{{status_item.value}}</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view wx:if="{{orderList.length > 0}}" class="more" bindtap="toOrders">查看更多</view>
+  <view wx:if="{{orderList.length == 0}}" class="no_order">
+    <text>暂无订单</text>
+  </view>
+  <view class="case">
+    <view class="case_title">成功案例</view>
+    <view class="case_img">
+      <image src="{{item}}" wx:for="{{caseList}}" wx:key="idx" mode="aspectFill"></image>
+    </view>
+  </view>
+
+  <view class="progress" bindtap="seeProcess">
+    <text>下单流程</text>
+  </view>
+
+  <view class="process_contain" wx:if="{{showProcess}}">
+    <view class="pro_con">
+      <view class="process">
+        <view class="process_intro">
+          <text>平台服务流程</text>
+          <image src="http://7xo285.com1.z0.glb.clouddn.com/Fk-1CSHS0rKHmbsPTz9_SptRuh21" />
+        </view>
+        <view class="close">
+          <image src="../../images/close.png" bindtap="closeProcee"></image>
+        </view>
+      </view>
+    </view>
+  </view>
+
+</view>

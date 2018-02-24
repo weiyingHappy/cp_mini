@@ -1,0 +1,76 @@
+<view class="container">
+
+  <view class='top'>
+    <text class='state'>{{invoiceDetail.state==0 ? '待开票' : invoiceDetail.state==1? '已发出' : invoiceDetail.state==2? '已完成' : '已取消'}}</text>
+    <text wx:if="{{invoiceDetail.state == 0}}" class='tip'>提示：发票将在成功申请后的三个工作日内开出。</text>
+  </view>
+
+  <view class='item_pannle'>
+    <view class='item_title'>收件信息</view>
+    <view class='item_content'>
+      <view class='item_li'>
+        <text class='d_left'>详细地址</text>
+        <text>{{invoiceDetail.address}}</text>
+      </view>
+      <view class='item_li'>
+        <text class='d_left'>收件人</text>
+        <text>{{invoiceDetail.contact}}</text>
+      </view>
+      <view class='item_li'>
+        <text class='d_left'>联系方式</text>
+        <text>{{invoiceDetail.phone}}</text>
+      </view>
+    </view>
+  </view>
+
+  <view class='item_pannle'>
+    <view class='item_title'>发票信息</view>
+    <view class='item_content'>
+      <view class='item_li'>
+        <text class='d_left'>发票抬头</text>
+        <text>{{invoiceDetail.customer_name}}</text>
+      </view>
+      <view class='item_li'>
+        <text class='d_left'>发票内容</text>
+        <text>{{invoiceDetail.content}}</text>
+      </view>
+      <view class='item_li'>
+        <text class='d_left'>发票金额</text>
+        <text>￥{{invoiceDetail.price}}</text>
+      </view>
+    </view>
+  </view>
+
+  <view class='item_pannle' bindtap='isShow'>
+    <view class='item_top'>
+      <view class='item_top_title'>
+        <view class='p'>一张发票（含{{invoiceDetail.order.length}}笔订单）</view>
+        <view class='p'>{{invoiceDetail.create_time}}</view>
+      </view>
+      <image wx:if='{{isShow}}' class='jt' src="../../images/up.png" />
+      <image wx:else class='jt' src="../../images/down.png" />
+    </view>
+  </view>
+
+  <view class='invoice_list' wx:if='{{isShow}}'>
+    <view class='invoice_item' wx:for="{{invoiceDetail.order}}" wx:for-item="item" wx:key="{{item.order_no}}">
+      <view>
+        <text>订单：{{item.order_no}}</text>
+      </view>
+      <view>
+        <text>金额：￥{{item.pay_price?item.pay_price:'0.00'}}</text>
+      </view>
+      <view wx:for="{{item.menu_name}}" wx:for-item="item" wx:key="{{item.name}}">
+        <text>服务名称：{{item.name}}</text>
+      </view>
+      <view>
+        <text>下单时间：{{item.create_time}}</text>
+      </view>
+    </view>
+  </view>
+
+  <view class='cancle' wx:if="{{ invoiceDetail.state == 0 }}">
+    <button bindtap='cancleInvoice'>取消开票</button>
+  </view>
+
+</view>

@@ -1,0 +1,79 @@
+<!-- 错误提示 -->
+<view class="ad_popError" wx:if="{{popErrorMsg}}">
+  <view>
+    <text>{{popErrorMsg}}</text>
+  </view>
+</view>
+
+<view>
+  <view class="info">
+    <view class="title">上传图片信息</view>
+    <view class="img">
+      <view class="sel_img" wx:for="{{imgList}}" wx:key="idx" wx:for-index="index">
+        <view class="del_img" bindtap="delImg" data-index="{{index}}"></view>
+        <image src="{{item}}" data-src="{{item}}" catchtap="previewImage" mode="aspectFill"></image>
+      </view>
+      <view wx:if="{{count!=0}}" class="img-container" bindtap="chooseImageTap">
+      </view>
+    </view>
+  </view>
+  <view class="info">
+    <view class="note-contain">
+      <textarea placeholder="文件备注信息" placeholder-style="color:#bfbfbf" class="note" name="etc" data-name="etc" value="{{etc}}" bindblur="orderItemValue"></textarea>
+    </view>
+  </view>
+  <view class="info">
+    <view class="title">联系方式</view>
+    <view class="info-contain">
+      <view class="title-name">
+        <text class="title-ordername">联系人</text>
+        <view>
+          <input class="ordername" placeholder="请输入联系人姓名" placeholder-style="color:#bfbfbf" name="user_name" data-name="user_name" value="{{user_name}}" bindblur="orderItemValue" />
+          <view class="error" wx:if="{{usernameError}}">请输入联系人</view>
+        </view>
+      </view>
+      <view class="title-name">
+        <text class="title-ordername">手机号</text>
+        <view>
+          <input class="ordername" placeholder="请输入手机号" placeholder-style="color:#bfbfbf" name="phone" data-name="phone" value="{{phone}}"  bindblur="orderItemValue" />
+          <view class="error" wx:if="{{phoneError}}">{{errorMsg}}</view>
+        </view>
+      </view>
+       <view class="title-name">
+        <text class="title-ordername">企业名称</text>
+        <view>
+          <input class="ordername" placeholder="请输入企业名称" placeholder-style="color:#bfbfbf" name="customer_name" data-name="customer_name" value="{{customer_name}}"  bindblur="orderItemValue" />
+        </view>
+      </view> 
+      <view class="title-name ">
+        <text class="title-ordername">邮箱</text>
+        <view>
+          <input class="ordername" placeholder="请输入邮箱地址（选填）" placeholder-style="color:#bfbfbf" name="email" data-name="email" value="{{email}}" bindblur="orderItemValue" />
+          <view class="error" wx:if="{{emailError}}">{{emailMsg}}</view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="info">
+    <view class="title">服务地址</view>
+    <view class="title-name">
+      <text class="position" bindtap="getLocation">当前位置</text>
+      <input class="ordername" placeholder="或手动输入服务地址（选填）" placeholder-style="color:#bfbfbf" name="address" data-name="address" value="{{address}}" bindblur="orderItemValue" />
+    </view>
+  </view>
+  <view class="info">
+    <view class="time-contain">
+      <view class="time">
+        预计反馈时间：{{feedTime}}
+      </view>
+    </view>
+  </view>
+  <view class="fee">
+    <view class="btn">
+      <text class="addinfo" bindtap="addOrder">立即下单</text>
+    </view>
+    <view class="charge">
+      <text bindtap="toFeeScale">收费标准</text>
+    </view>
+  </view>
+</view>

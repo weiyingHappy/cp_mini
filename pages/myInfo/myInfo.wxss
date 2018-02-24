@@ -1,0 +1,53 @@
+/* pages/myInfo/myInfo.wxss */
+
+.info_list {
+  padding: 0 16rpx;
+  background: #fff;
+  margin-top: 20rpx;
+}
+
+.info_list_item, .dis_change {
+  display: flex;
+  border-bottom: 1rpx solid #e5e5e5;
+  color: #404040;
+  font-size: 28rpx;
+  justify-content: space-around;
+  padding: 30rpx 0;
+  align-items: center;
+}
+
+.dis_change {
+  color: #919191;
+}
+
+.is_change {
+}
+
+.info_title {
+  width: 120rpx;
+  flex-grow: 1;
+  flex-shrink: 0;
+  padding-right: 150rpx;
+}
+
+.info_list_item image {
+  height: 80rpx;
+  width: 80rpx;
+  border-radius: 50%;
+}
+
+.info_dec, .com_name, .dis_com_name {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.dis_com_name {
+  padding-left: 38rpx;
+  background: url(http://p0ry8xouf.bkt.clouddn.com/c169e2852ce595f95485bdcf598565a9.png) no-repeat left center;
+  background-size: 28rpx 28rpx;
+}
+
+.info_list_item:last-child {
+  border-bottom: none;
+}

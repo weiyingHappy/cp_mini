@@ -1,0 +1,51 @@
+<!--pages/chooseInvoice/chooseInvoice.wxml-->
+<view class="containers">
+  <view class="scroll_content">
+    <view class="invoice_tip">
+      <view class="in_tips">
+        <text>发票详情</text>
+        <!-- <text>开票说明</text> -->
+      </view>
+      <text class="in_tip">当前仅支持开具普通增值税纸质发票</text>
+    </view>
+    <view class="order_item" wx:for="{{orderList}}" wx:for-item="item" wx:key="{{item.order_no}}" wx:for-index="idx">
+      <view class='item_pannle' bindtap="checkItem" data-no="{{idx}}">
+        <view class="order_content">
+          <view class="order_num">订单：
+            <text>{{item.order_no}}</text>
+          </view>
+          <view class="t_price">总价：
+            <text>￥{{item.pay_price?item.pay_price:'0.00'}}</text>
+          </view>
+          <view class="order_title" wx:for="{{item.menu_name}}" wx:for-item="its" wx:for-index="idxs" wx:key="idxs">
+            <text>{{its.name}}</text>
+          </view>
+          <view class="order_time">下单时间:{{item.create_time}}</view>
+        </view>
+        <view class="choose_order">
+          <image src="{{item.src}}" />
+        </view>
+      </view>
+    </view>
+
+    <view class="intro">
+      <view bindtap="toInvoiceIntro">开票说明</view>
+    </view>
+  </view>
+  <view class="footer">
+    <view class="footer_all">
+      <view class="foot_lt" bindtap="selAll">
+        <image wx:if="{{isAll}}" src="{{checkImg}}"></image>
+        <image wx:else src="{{uncheckImg}}"></image>
+        <text>全选</text>
+      </view>
+      <view class="foot_detail">
+        <view>共：
+          <text>{{chekedNum}}</text>笔订单</view>
+        <view>合计：
+          <text>{{price}}</text>元</view>
+      </view>
+    </view>
+    <view class="bottomBtn {{chekedNum?'':'nodraw'}}" bindtap="toDrawInvoice">去开发票</view>
+  </view>
+</view>

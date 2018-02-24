@@ -1,0 +1,56 @@
+{
+  "pages": [
+    
+    "pages/index/index",
+    "pages/submitOrder/submitOrder",
+    "pages/mine/mine",
+    "pages/coupon/coupon",
+    "pages/orders/orders",
+    "pages/orderDetail/orderDetail",
+    "pages/payOrder/payOrder",
+    "pages/detectPhone/detectPhone",
+    "pages/comment/comment",
+    "pages/feeScale/feeScale",
+    "pages/invoice/invoice",
+    "pages/invoiceDetail/invoiceDetail",
+    "pages/chooseInvoice/chooseInvoice",
+    "pages/drawinvoice/drawinvoice",
+    "pages/invoiceList/invoiceList",
+    "pages/myInfo/myInfo",
+    "pages/changeInfo/changeInfo",
+    "pages/invoiceIntro/invoiceIntro",
+    "pages/success/success"
+  ],
+  "window": {
+    "navigationBarBackgroundColor": "#26888E",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle": "white",
+    "onReachBottomDistance": 20
+  },
+  "tabBar": {
+    "color": "#bfbfbf",
+    "selectedColor": "#404040",
+    "backgroundColor": "#ffffff",
+    "borderStyle": "black",
+    "list": [
+      {
+        "selectedIconPath": "images/logo_ed.png",
+        "iconPath": "images/logo.png",
+        "pagePath": "pages/index/index",
+        "text": "首页"
+      },
+      {
+        "selectedIconPath": "images/add_order.png",
+        "iconPath": "images/add_order.png",
+        "pagePath": "pages/submitOrder/submitOrder",
+        "text": "下单"
+      },
+      {
+        "selectedIconPath": "images/mine_ed.png",
+        "iconPath": "images/mine.png",
+        "pagePath": "pages/mine/mine",
+        "text": "我的"
+      }
+    ]
+  }
+}

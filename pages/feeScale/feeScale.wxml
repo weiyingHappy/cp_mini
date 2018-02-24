@@ -1,0 +1,23 @@
+<view class="container">
+  <view class="fee_title">
+    <text>工艺帮</text>
+    <text>工艺服务平台定价标准</text>
+  </view>
+  <view class="fee_img">
+    <image src="http://7xo285.com1.z0.glb.clouddn.com/FrL6TgxK8QeWOu4mkq6ZQmhDLZ3i"></image>
+  </view>
+  <view class="fee_note">
+    <text>备注</text>
+  </view>
+  <view class="fee_list">
+    <view>1.以上定价参数仅供参考，具体定价方案将依据图纸复杂和工艺难度程度确定。</view>
+    <view>2.客户经理将在与用户沟通后确定工艺方案，用户确认无误后线上付款（支持单项和全单付款），用户在付款前享有议价和取消订单的权利。</view>
+    <view>3.工艺服务平台订单为单笔结算，不支持分期、预付等形式。</view>
+    <view>4.用户下单后，默认工艺开始制作，原则上不允许取消，如有其他疑问，或遇到特殊情况，请在第一时间致电客户经理。</view>
+    <view>5.用户在付款时要明确个人信息（包括联系人姓名和电话号码），因用户个人操作不当导致工期延误等问题，本平台不予负责 。</view>
+    <view>6.用户可以再订单完成5个工作日后，申请发票/收据的开具请求。</view>
+  </view>
+  <view class="fee_other">
+    其他权责问题，将依照《工艺帮服务协议》中的相关规定执行
+  </view>
+</view>

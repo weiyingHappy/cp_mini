@@ -1,0 +1,258 @@
+/* pages/drawinvoice/drawinvoice.wxss */
+
+.container {
+  height: 100%;
+}
+
+.ad_popError {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: fixed;
+  z-index: 9;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+}
+
+.ad_popError view {
+  display: flex;
+  align-items: center;
+  color: #fff;
+  font-size: 34rpx;
+  justify-content: center;
+  height: 160rpx;
+  width: 560rpx;
+  line-height: 48rpx;
+  border-radius: 6rpx;
+  background: #5a5a5a;
+}
+
+.ad_popError view text {
+  padding-left: 74rpx;
+  background: url(http://p0ry8xouf.bkt.clouddn.com/2b1aa50c3683cc10ae02534053d66d19.png) no-repeat left center;
+  background-size: 48rpx;
+}
+
+.draw_tip {
+  padding: 20rpx 40rpx 0 40rpx;
+  display: flex;
+  align-items: center;
+}
+
+.dr_tips {
+  color: #919191;
+  font-size: 28rpx;
+  margin-right: 18rpx;
+}
+
+.dr_tip {
+  color: #ec0000;
+  font-size: 20rpx;
+}
+
+.dr_info {
+  margin-top: 20rpx;
+}
+
+.dr_info .title {
+  padding: 30rpx 20rpx 16rpx 20rpx;
+  font-size: 28rpx;
+  color: #5a5a5a;
+  background: #f4f4f4;
+}
+
+.dr_title-name {
+  display: flex;
+  align-items: center;
+  padding: 30rpx;
+  font-size: 28rpx;
+  background: #fff;
+}
+
+.dr_title-name input {
+  width: 520rpx;
+}
+
+/* .add_info input {
+  width: 520rpx;
+}
+.add_info text{
+  width: 520rpx;
+} */
+
+.dr_cordername {
+  width: 520rpx;
+}
+
+.add_info .dr_credit {
+  /* width:440rpx;  */
+}
+
+.dr_info-contain {
+  padding: 0 30rpx;
+  background: #fff;
+}
+
+.dr_info-contain .dr_title-name {
+  padding: 30rpx 0;
+  border-bottom: 1px solid #e5e5e5;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.dr_info-contain .dr_title-name:last-child {
+  border-bottom: none;
+}
+
+.dr_title-ordername, .credit {
+  color: #404040;
+  width: 200rpx;
+  flex-grow: 0;
+  flex-shrink: 0;
+  height: 1.6rem;
+  line-height: 1.6rem;
+}
+
+.credit {
+  width: 260rpx;
+}
+
+.position {
+  width: 166rpx;
+  padding-left: 34rpx;
+  background: url(http://7xo285.com1.z0.glb.clouddn.com/FhJCfzv9yIDSRvd6uaZ6wV12vVus) no-repeat left center;
+  background-size: 30rpx 30rpx;
+}
+
+.draw_sub {
+  padding: 130rpx 0 320rpx 0;
+  margin: 0 auto;
+}
+
+.btn {
+  margin: 0 auto;
+  width: 400rpx;
+  /* height: 80rpx; */
+  line-height: 80rpx;
+  border-radius: 40rpx;
+  color: #fff;
+  font-size: 36rpx;
+  text-align: center;
+  background: #26888e;
+}
+
+.btn:active {
+  background: #2fafb7;
+}
+
+.addinfo {
+  height: 80rpx;
+  line-height: 80rpx;
+  background: #26888e;
+  color: #fff;
+  border: none;
+  border-radius: 40rpx;
+}
+
+.intro {
+  margin-top: 36rpx;
+  text-align: center;
+}
+
+.intro text {
+  color: #26888e;
+  font-size: 26rpx;
+  padding:6rpx 32rpx;
+  background: url(http://p0ry8xouf.bkt.clouddn.com/2b1aa50c3683cc10ae02534053d66d19.png) no-repeat left center;
+  background-size: 24rpx 24rpx;
+}
+
+.myinvoce_modal {
+  justify-content: center;
+  position: fixed;
+  z-index: 9;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.4);
+}
+
+.m_second {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.myinvoce {
+  width: 560rpx;
+  background: #fff;
+  border-radius: 8rpx;
+}
+
+.m_title {
+  height: 110rpx;
+  line-height: 110rpx;
+  text-align: center;
+  font-size: 32rpx;
+  color: #404040;
+}
+
+.m_content {
+  padding: 30rpx 40rpx;
+  border-top: 1px solid #bfbfbf;
+  border-bottom: 1px solid #bfbfbf;
+  min-height: 20rpx;
+  color: #5a5a5a;
+  font-size: 28rpx;
+}
+
+.m_content view {
+  margin-bottom: 24rpx;
+  display: flex;
+}
+
+.m_content view:last-child {
+  margin-bottom: 0;
+}
+
+.con_title {
+  width: 180rpx;
+  flex-shrink: 0;
+  flex-grow: 0;
+}
+
+.con {
+  width: 480rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.m_operate {
+  font-size: 32rpx;
+  display: flex;
+  align-items: center;
+}
+
+.m_operate view {
+  height: 100rpx;
+  line-height: 100rpx;
+  width: 50%;
+  text-align: center;
+  border-right: 1px solid #bfbfbf;
+}
+
+.m_operate view:last-child {
+  border: none;
+}
+
+.m_cancel {
+  color: #5a5a5a;
+}
+
+.m_btn {
+  color: #26888e;
+}

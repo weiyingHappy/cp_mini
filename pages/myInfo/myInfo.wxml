@@ -1,0 +1,27 @@
+<!--pages/myInfo/myInfo.wxml-->
+<view class="container">
+  <view class="info_list">
+    <view class="info_list_item dis_change">
+      <view class="info_title">会员头像</view>
+      <image src="{{userInfo.avatarUrl}}" class="user_head" />
+    </view>
+    <view wx:if="{{memeberInfo.credit}}" class="info_list_item dis_change" >
+      <view class="info_title">企业名称</view>
+      <view class="dis_com_name">{{customer_name}}</view>
+    </view>
+    <view  wx:else class="info_list_item is_change" bindtap="changeComInfo">
+      <view class="info_title">企业名称</view>
+      <view class="com_name">{{customer_name}}</view>
+    </view>
+    
+    
+    <view class="info_list_item" bindtap="changeInfo">
+      <view class="info_title">昵称</view>
+      <view class="info_dec">{{name}}</view>
+    </view>
+    <view class="info_list_item" bindtap="editPhone">
+      <view class="info_title">我的电话</view>
+      <view class="info_dec" >{{phone}}</view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,33 @@
+<!--pages/orders/orders.wxml-->
+<view class="container">
+  <block wx:if="{{count==0}}">
+    <view class="no_pannle">
+      <image class="nothing" src="../../images/no_orders.png" />
+      <text class="nothing_text">暂无订单</text>
+    </view>
+  </block>
+  <block wx:else>
+    <view class="order_list" wx:for="{{orderList}}" wx:for-item="item" wx:key="{{item.order_no}}">
+      <view class="order_item" id="{{item.order_no}}" bindtap="getOrderDetail">
+        <view class="order_top">
+          <text class="order_no">订单：{{item.order_no}}</text>
+          <text class="order_state">{{item.state==10 ? '已完成' : item.state==0? '已提交' : item.state==1? '待确认' : item.state==2? '待支付' : item.state==3? '制作中' : item.state==4? '交付确认' : item.state==11? '已取消' : '平台取消' }}</text>
+          <!-- 0已提交，1，待确认，2待支付，3制作中，4交付确认，10已完成，11取消,12平台取消 -->
+        </view>
+        <view class="order_bottom">
+          <block wx:for="{{item.menu}}" wx:for-item="item" wx:key="{{item.id}}">
+            <text class="order_title">{{item.name}}</text>
+          </block>
+
+          <view class="order_tip">
+            <image src="../../images/time_tip.png" />
+            <text>{{item.state_etc[0].msg}}</text>
+          </view>
+          <text wx-if="{{item.state==0}}" class="order_time">预计今日14:00前确认</text>
+        </view>
+      </view>
+    </view>
+  </block>
+
+
+</view>

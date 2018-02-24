@@ -1,0 +1,56 @@
+<!--pages/coupon/coupon.wxml-->
+<view class="container">
+  <!-- 优惠券可用否？ -->
+  <view class="coupon_type">
+    <text class="{{checked}}" data-class="{{checked}}" bindtap="chooseType">可用优惠券</text>
+    <text class="{{!checked}}" data-class="{{!checked}}" bindtap="chooseType">失效优惠券</text>
+  </view>
+  <block wx-if="{{checked == true && couponList.length == 0}}">
+    <view class="no_pannle">
+      <image class="nothing" src="../../images/no_coupons.png" />
+      <text class="nothing_text">暂无可用优惠券</text>
+    </view>
+  </block>
+  <block wx-if="{{checked == false && unCouponList.length == 0}}">
+    <view class="no_pannle">
+      <image class="nothing" src="../../images/no_coupons.png" />
+      <text class="nothing_text">暂无失效优惠券</text>
+    </view>
+  </block>
+  <!-- 可用优惠券列表 -->
+  <view class="coupon_list" wx:if="{{checked&& couponList.length > 0}}">
+    <block wx-else wx:for="{{couponList}}" wx:for-item="item" wx:key="{{item.id}}">
+      <view class="coupon_item" id="{{item.id}}" bindtap="chooseCoupon">
+        <view class="coupon_left" style="background: {{bgColor[item.type]}}">
+          <view class="top_point"></view>
+          <view class="bottom_point"></view>
+          <text wx:if="{{item.type == 0}}"><text class="text_tip">￥</text>{{item.desc.discount}}</text>
+          <text wx:if="{{item.type == 1}}">{{item.desc.discount}}<text class="text_tip">折</text></text>
+          <text wx:if="{{item.type == 2}}"><text class="text_tip">￥</text>{{item.desc.discount}}</text>
+        </view>
+        <view class="coupon_right">
+          <text class="coupon_time">{{item.title}}</text>
+          <text>有效期：{{item.end}}</text>
+        </view>
+      </view>
+    </block>
+  </view>
+  <!-- 失效优惠券列表 -->
+  <view class="coupon_list" wx:if="{{!checked&& unCouponList.length > 0}}">
+    <block wx-else wx:for="{{unCouponList}}" wx:for-item="item" wx:key="{{item.id}}">
+      <view class="coupon_item">
+        <view class="coupon_left">
+          <view class="top_point"></view>
+          <view class="bottom_point"></view>
+          <text wx:if="{{item.type == 0}}"><text class="text_tip">￥</text>{{item.desc.discount}}</text>
+          <text wx:if="{{item.type == 1}}">{{item.desc.discount}}<text class="text_tip">折</text></text>
+          <text wx:if="{{item.type == 2}}"><text class="text_tip">￥</text>{{item.desc.discount}}</text>
+        </view>
+        <view class="coupon_right">
+          <text class="coupon_time">{{item.title}}</text>
+          <text>有效期：{{item.end}}</text>
+        </view>
+      </view>
+    </block>
+  </view>
+</view>

@@ -1,0 +1,99 @@
+{
+	"description": "项目配置文件。",
+	"setting": {
+		"urlCheck": false,
+		"es6": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true
+	},
+	"compileType": "miniprogram",
+	"libVersion": "1.6.6",
+	"appid": "wxa776e3ee0c09e1e9",
+	"projectname": "cp-mini",
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"current": -1,
+			"list": []
+		},
+		"miniprogram": {
+			"current": -1,
+			"list": [
+				{
+					"id": -1,
+					"name": "一键下单",
+					"pathName": "pages/submitOrder/submitOrder",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "收费标准",
+					"pathName": "pages/feeScale/feeScale",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "我的订单",
+					"pathName": "pages/mine/mine",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "选择发票",
+					"pathName": "pages/chooseInvoice/chooseInvoice",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "填写发票",
+					"pathName": "pages/drawinvoice/drawinvoice",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "开票记录",
+					"pathName": "pages/invoiceList/invoiceList",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "开票详情",
+					"pathName": "pages/invoiceDetail/invoiceDetail",
+					"query": "id=21"
+				},
+				{
+					"id": -1,
+					"name": "支付",
+					"pathName": "pages/payOrder/payOrder",
+					"query": "order_no=2018011114530953"
+				},
+				{
+					"id": 10,
+					"name": "开具发票",
+					"pathName": "pages/chooseInvoice/chooseInvoice",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "订单详情",
+					"pathName": "pages/orderDetail/orderDetail",
+					"query": "order_no=2018011717414294"
+				},
+				{
+					"id": -1,
+					"name": "开票说明",
+					"pathName": "pages/invoiceIntro/invoiceIntro",
+					"query": ""
+				}
+			]
+		}
+	}
+}

@@ -1,0 +1,58 @@
+/* pages/comment/comment.wxss */
+
+.comment_pannle {
+  width: 100%;
+  background: #fff;
+  overflow: hidden;
+}
+
+.comment_star {
+  display: flex;
+  align-items: center;
+  padding: 32rpx 30rpx 24rpx;
+  font-size: 28rpx;
+  color: #5a5a5a;
+}
+
+.comment_star image {
+  width: 28rpx;
+  height: 28rpx;
+  margin-right: 14rpx;
+}
+
+.comment_content {
+  margin: 0 30rpx 32rpx;
+  width: 650rpx;
+  height: 270rpx;
+  padding: 20rpx;
+  border: solid 1rpx #e9e9e9;
+  border-radius: 4rpx;
+  font-size: 26rpx;
+  color: #5a5a5a;
+}
+
+.comment_btn {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  padding-top: 24rpx;
+}
+
+.comment_btn button {
+  margin: 0;
+  padding: 0;
+  width: 120rpx;
+  height: 60rpx;
+  border: solid 1rpx #e9e9e9;
+  border-radius: 30rpx;
+  font-size: 28rpx;
+  line-height: 60rpx;
+  margin-left: 24rpx;
+  background: #fff;
+}
+
+.comment_btn .confirm_btn {
+  border: solid 1rpx #189f17;
+  margin-right: 30rpx;
+  color: #189f17;
+}

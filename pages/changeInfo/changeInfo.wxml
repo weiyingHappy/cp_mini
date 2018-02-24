@@ -1,0 +1,15 @@
+<!--pages/changeInfo/changeInfo.wxml-->
+<view class="container">
+  <view class="change_title" wx:if="{{changeType=='1'}}">
+    <input  value="{{nickname}}" bindinput="orderItemValue" focus="true" data-name="nickname"></input>
+    <view class="save">
+      <view bindtap="saveChange"><button>保存</button></view>
+    </view>
+  </view>
+  <view class="change_title" wx:else="{{changeType=='2'}}">
+    <input value="{{customer_name}}" bindinput="orderItemValue" focus="true" data-name="customer_name"></input>
+    <view class="save">
+      <view bindtap="saveChange"><button>保存</button></view>
+    </view>
+  </view>
+</view>

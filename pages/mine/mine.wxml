@@ -1,0 +1,59 @@
+<!--pages/mine/mine.wxml-->
+<view class="container">
+
+  <view class="user_pannle" bindtap="toUserInfo">
+    <view class="user_con">
+      <view class="user_info_pannle">
+        <image src="{{userInfo.avatarUrl}}" class="user_head" />
+        <view class="user_info">
+          <text class="user_name">昵称：{{name}}</text>
+          <view class="edit">
+            <view class="phone_number">
+              <text>电话：</text>
+              <input type="number" maxlength="11" disabled="false" value="{{phone}}" class="phone_input"></input>
+            </view>
+            <!-- <image src="../../images/edit.png" bindtap="editPhone" data-edit="phone" /> -->
+          </view>
+        </view>
+      </view>
+      <view class="user_company" wx:if="{{memeberInfo.credit}}">
+        <view class='company_type'>
+          <image src='../../images/renzheng.png' />
+          <text>已认证企业：</text>
+        </view>
+        <view>{{customer_name}}</view>
+      </view>
+      <view class="user_company" wx:else>
+        <view class='company_type'>
+          <text>所属企业：</text>
+        </view>
+        <view>{{customer_name?customer_name:'暂无'}}</view>
+      </view>
+    </view>
+  </view>
+
+  <view class="mine_list">
+    <view class="mine_item" bindtap="toCoupon">
+      <view class="mine_item_left">
+        <image src="../../images/coupon.png"></image>
+        <text>我的优惠券</text>
+      </view>
+      <image src="../../images/left.png"></image>
+    </view>
+    <view class="mine_item" bindtap="toOrderList">
+      <view class="mine_item_left">
+        <image src="../../images/order.png"></image>
+        <text>我的订单</text>
+      </view>
+      <image src="../../images/left.png"></image>
+    </view>
+    <view class="mine_item" bindtap="toInvoice">
+      <view class="mine_item_left">
+        <image src="../../images/invoice.png"></image>
+        <text>我的发票</text>
+      </view>
+      <image src="../../images/left.png"></image>
+    </view>
+  </view>
+
+</view>

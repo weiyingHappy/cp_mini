@@ -1,0 +1,22 @@
+<view>
+  <!-- 错误提示 -->
+  <view class="ad_popError" wx:if="{{popErrorMsg}}">
+    <view>
+      <text>{{popErrorMsg}}</text>
+    </view>
+  </view>
+  <view class="phone_pannle">
+    <text class="phone_title">{{change == null ? '注册手机号码': '更换手机号码' }}</text>
+    <view class="phone_item">
+      <text>手机号：</text>
+      <input placeholder="请输入手机号" placeholder-style="color:#bfbfbf" type="number" maxlength="11" data-name="phone" bindblur="orderItemValue"></input>
+    </view>
+    <view class="phone_item">
+      <text>验证码：</text>
+      <input placeholder="请输入验证码" placeholder-style="color:#bfbfbf" type="number" maxlength="4" data-name="detect" bindblur="orderItemValue"></input>
+      <text class="get_no" bindtap="sendcode">{{sendcodes}}</text>
+    </view>
+    <text class="phone_btn" bindtap="validCode" wx:if="{{disBtn}}">确定</text>
+    <text class="phone_btn phone_disbtn" wx:else>确定</text>
+  </view>
+</view>

@@ -1,0 +1,20 @@
+<!--pages/comment/comment.wxml-->
+<view class="container">
+  <view class="comment_pannle">
+    <view class="comment_star">评分：
+      <image src="{{starFlag>=1 ? starImg_ed : starImg}}" data-index="1" bindtap="commentStar" />
+      <image src="{{starFlag>=2 ? starImg_ed : starImg}}" data-index="2" bindtap="commentStar" />
+      <image src="{{starFlag>=3 ? starImg_ed : starImg}}" data-index="3" bindtap="commentStar" />
+      <image src="{{starFlag>=4 ? starImg_ed : starImg}}" data-index="4" bindtap="commentStar" />
+      <image src="{{starFlag>=5 ? starImg_ed : starImg}}" data-index="5" bindtap="commentStar" />
+    </view>
+    <!-- <view> -->
+      <textarea class="comment_content" placeholder="评价此订单..." placeholder-style="color:#bfbfbf" bindinput="bindCommentContent"></textarea>
+    <!-- </view> -->
+  </view>
+
+  <view class="comment_btn">
+    <button class="cancel_btn" plain="true" bindtap="cancleComment">取消</button>
+    <button class="confirm_btn" plain="true" bindtap="confirmComment">确认</button>
+  </view>
+</view>
